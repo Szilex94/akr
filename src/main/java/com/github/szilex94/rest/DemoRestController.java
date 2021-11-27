@@ -6,15 +6,12 @@ import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
 import jakarta.inject.Inject;
 
-@Controller("/state")
+@Controller("/testEndpoint")
 public class DemoRestController {
 
-	@Inject
-	private SimpleService sl;
-
-	@Post("{state}")
-	public void toggleState(boolean state) {
-		sl.toogle(state);
+	@Post
+	public void toggleState(Test test) {
+		System.out.println(test);
 	}
 
 }
